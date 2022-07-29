@@ -46,3 +46,103 @@ Once the environment is loaded you should be placed at a `bash` prompt in the `/
 John Rofrano, Senior Technical Staff Member, DevOps Champion, @ IBM Research
 
 ## <h3 align="center"> © IBM Corporation 2022. All rights reserved. <h3/>
+
+# Benefits of TDD
+
+1. It Saves time when developing
+2. In orer to create a DevOPs CI/CD pipeline, all testing
+   must be automated
+3. It ensure that future changes don't break your code
+
+# Popular Testing Frameworks
+
+1. xUnit Frameworks
+
+   - JUnit for Java
+   - PyUnit for Python
+   - NUnit for .NET
+   - Embunit for C/C++
+
+2. Packages for Python
+   - Nose
+   - Coverage
+   - Pachunnio
+
+# Summary and Highlights
+
+1. To run TDD tests in Bash, you can call unittest or call nosetests if Nose is installed.
+
+2. Unlike unittest, Nose can color code test results, report code coverage, and list missing test cases.
+
+3. Testing frameworks provide tools that simplify testing conditions.
+
+4. Assertions are checks to determine if tests have passed or failed.
+
+5. To create assertions in Python, developers can use the assert() function or any additional PyUnit asserts.
+
+6. Happy paths verify that a function returns positive outcomes when expected, while sad paths verify that a function responds to exceptions appropriately and without breaking.
+
+7. Test fixtures establish a known initial state before and after each test.
+
+8. Test fixtures are helpful for many testing situations such as creating mock objects and loading a database with a known set of data.
+
+9. Test fixtures operate at three levels of specificity:
+
+   - Module
+
+   - Test case
+
+   - Test
+
+# Run Python unit Test
+
+You can make the output more useful by adding the -v flag to turn on verbose mode. Run the command below for more useful output
+
+```
+python3 -m unittest
+python3 -m unittest -v
+```
+
+## Install and Run nose
+
+To see verbose output from nose, run nosetests -v. The verbose output from Nose will return nicer output than from unittest because it only returns the docstring comments:
+
+```
+pip install nose
+
+nosetests -v
+
+```
+
+## Install Pinocchio and Run
+
+```
+pip install pinocchio
+nosetests --with-spec --spec-color
+```
+
+## Install Coverage and Run with Missing
+
+```
+pip install coverage
+
+nosetests --with-spec --spec-color --with-coverage
+
+coverage report -m
+```
+
+## Setup Configuration
+
+```
+[nosetests]
+verbosity=2
+with-spec=1
+spec-color=1
+with-coverage=1
+cover-erase=1
+cover-package=triangle
+
+[coverage:report]
+show_missing = True
+
+```
